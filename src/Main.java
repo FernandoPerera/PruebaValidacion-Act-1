@@ -38,7 +38,7 @@ public class Main {
         thread10.join();
 
         System.out.println("*******************");
-        System.out.println("La media aritmetica es " + (notes.getSummedCalification() / 10));
+        System.out.println("La media aritmetica es " + String.format("%.2f", notes.getSummedCalification() / 100000));
         System.out.println("*******************");
     }
 }
