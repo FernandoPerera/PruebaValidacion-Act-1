@@ -14,6 +14,7 @@ public class RatingAdder extends Thread{
         this.indexOfList = indexOfList;
     }
 
+    @Override
     public void run() {
 
         List<Integer> calificationsList =  notes.splitList();
@@ -22,12 +23,14 @@ public class RatingAdder extends Thread{
             totalAmount += calificationsList.get(i);
             countNumbers += 1;
         }
-        notes.setSummedCalification(totalAmount);
+        notes.addSummedCalification(totalAmount);
 
-        System.out.println("\n------------------------");
-        System.out.println("El hilo " + threadId + " ha contado " + countNumbers + " calificaciones");
-        System.out.println("Comenzo en el indice " + indexOfList + " y a sumado un total de " + totalAmount);
-        System.out.println("------------------------\n");
+        String output = "\n------------------------";
+        output += "\nEl hilo " + threadId + " ha contado " + countNumbers + " calificaciones";
+        output += "\nComenzo en el indice " + indexOfList + " y ha sumado un total de " + totalAmount;
+        output += "\n------------------------\n";
+
+        System.out.println(output);
 
     }
 }

@@ -16,33 +16,25 @@ public class Main {
         RatingAdder thread10 = new RatingAdder(notes, 10, 90000);
 
         thread1.start();
-        thread1.join();
-
         thread2.start();
-        thread2.join();
-
         thread3.start();
-        thread3.join();
-
         thread4.start();
-        thread4.join();
-
         thread5.start();
-        thread5.join();
-
         thread6.start();
-        thread6.join();
-
         thread7.start();
-        thread7.join();
-
         thread8.start();
-        thread8.join();
-
         thread9.start();
-        thread9.join();
-
         thread10.start();
+        
+        thread1.join();
+        thread2.join();
+        thread3.join();
+        thread4.join();
+        thread5.join();
+        thread6.join();
+        thread7.join();
+        thread8.join();
+        thread9.join();
         thread10.join();
 
         System.out.println("*******************");

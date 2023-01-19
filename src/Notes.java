@@ -13,7 +13,7 @@ public class Notes {
         return summedCalification;
     }
 
-    public void setSummedCalification(float summedCalification) {
+    synchronized public void addSummedCalification(float summedCalification) {
         this.summedCalification += summedCalification;
     }
 
@@ -30,9 +30,10 @@ public class Notes {
 
     }
 
-    public List<Integer> splitList() {
+      public List<Integer> splitList() {
 
         List<Integer>calificationsReturnList = califications.subList(splitNumber , splitNumber + 10000 );
+
         splitNumber += 10000;
 
         return calificationsReturnList;
